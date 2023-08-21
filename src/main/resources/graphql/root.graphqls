@@ -1,0 +1,22 @@
+type Message {
+    id: ID
+    content: String
+}
+
+input CreateMessageInput {
+    content: String!
+    sender: ID
+    channel: ID
+}
+
+type Query {
+    messages: [Message]
+}
+
+type Mutation {
+    createMessage(message: CreateMessageInput): Message
+}
+
+type Subscription {
+    listen: Message
+}
